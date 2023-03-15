@@ -3,29 +3,30 @@ import 'dart:io';
 void main() {
   // empty list
   final workerList = <Info>[];
-  Info infoWorker = Info(name: '', salary: 0, grade: '');
+  int i = 0;
+  // Info infoWorker = Info(name: '', salary: 0, grade: '');
   print("Enter the number of worker:");
   int? number = int.tryParse(stdin.readLineSync() ?? "0") ?? 0;
   for (int i = 0; i < number; i++) {
     print('Enter the information of worker');
     // Info i = Info(name: '', salary: 0, grade: '');
-    infoWorker.inputInfo();
-    workerList.add(infoWorker);
+    workerList[i].inputInfo();
+    workerList.add(workerList[i]);
   }
 
   for (int i = 0; i < number; i++) {
-    switch (infoWorker.grade) {
+    switch (workerList[i].grade) {
       case "A":
-        infoWorker.salary = infoWorker.salary + 300;
+        workerList[i].salary = workerList[i].salary + 300;
         break;
       case "B":
-        infoWorker.salary = infoWorker.salary + 250;
+        workerList[i].salary = workerList[i].salary + 250;
         break;
       default:
-        infoWorker.salary = infoWorker.salary + 100;
+        workerList[i].salary = workerList[i].salary + 100;
         break;
     }
-    infoWorker.displayInfo();
+    workerList[i].displayInfo();
   }
 }
 
@@ -42,13 +43,13 @@ class Info {
 
   void inputInfo() {
     print("Enter the worker's name:");
-    String? name = stdin.readLineSync();
+    name = stdin.readLineSync() ?? "";
 
     print("Enter the Salary");
-    int? salary = int.tryParse(stdin.readLineSync() ?? "0") ?? 0;
+    salary = int.tryParse(stdin.readLineSync() ?? "0") ?? 0;
 
-    print("Enter the grade( A, B, C or D)");
-    String? grade = stdin.readLineSync();
+    print("Enter the grade (A, B, C or D)");
+    grade = stdin.readLineSync() ?? "";
   }
 
   void displayInfo() {
