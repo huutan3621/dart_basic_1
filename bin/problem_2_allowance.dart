@@ -16,19 +16,13 @@ void main() {
   for (int i = 0; i < number; i++) {
     switch (infoWorker.grade) {
       case "A":
-        {
-          infoWorker.salary = infoWorker.salary + 300;
-        }
+        infoWorker.salary = infoWorker.salary + 300;
         break;
       case "B":
-        {
-          infoWorker.salary = infoWorker.salary + 250;
-        }
+        infoWorker.salary = infoWorker.salary + 250;
         break;
       default:
-        {
-          infoWorker.salary = infoWorker.salary + 100;
-        }
+        infoWorker.salary = infoWorker.salary + 100;
         break;
     }
     infoWorker.displayInfo();
